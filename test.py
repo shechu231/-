@@ -262,7 +262,7 @@ def show_month(year, month, day):
 def this_month():
     #print(calendar.month(datetime.now().year, datetime.now().month))
     #print('--------------------------')
-    show_month(datetime.now().year, datetime.now().month, datetime.now().day)
+    show_month(datetime.now().year, datetime.now().month, datetime.now().day+1)
  
 
 #show_month(2034, 1, 1)
