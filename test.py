@@ -275,8 +275,8 @@ if __name__=="__main__":
         args=sys.argv[1].split("#")#参数以#做分割
     print(args)
     # print(cal)
-    stream=open('config.yml',mode='r',encoding='utf-8')
-    data=yaml.load(stream)
+    stream=open('config.yml',mode='r')
+    data=yaml.load(stream,Loader=yaml.FullLoader)
     for i in data:
         print(i+":"+data[i]['date'])
         if(data[i]['date']==cal):
