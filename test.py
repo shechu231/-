@@ -19,7 +19,7 @@ def sendMessage(e_server,e_user,e_pwd,e_sender,e_receiver,who):
     #发送邮件主题
     subject ='生日消息'
     #编写正文
-    msg = MIMEText('<html><h1>'+who+'生日'+'</h1></html>','html','utf-8')
+    msg = MIMEText('<html><h1>'+who+'的生日'+'</h1></html>','html','utf-8')
     msg['Subject']=Header(subject,'utf-8')
 
     msg['From'] = "username" + "<" + sender + ">"
