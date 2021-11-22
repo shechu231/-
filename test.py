@@ -287,5 +287,5 @@ if __name__=="__main__":
         show_month(datetime.now().year, datetime.now().month, datetime.now().day+i)
         for person in data:
             if(data[person]['date']==cal):
-                sendMessage(args[0],args[1],args[2],args[3],args[4],"距离"+person+"生日还剩"+str(i)+"天")
+                sendMessage(args[0],args[1],args[2],args[3],args[4],"距离"+person+"的生日还剩"+str(i)+"天")
                 print(cal)
