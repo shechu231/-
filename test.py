@@ -19,7 +19,7 @@ def sendMessage(e_server,e_user,e_pwd,e_sender,e_receiver,who):
     #发送邮件主题
     subject ='生日消息'
     #编写正文
-    msg = MIMEText('<html><h1>'+who+'的生日'+'</h1></html>','html','utf-8')
+    msg = MIMEText('<html><h1>'+who+'</h1></html>','html','utf-8')
     msg['Subject']=Header(subject,'utf-8')
 
     msg['From'] = "username" + "<" + sender + ">"
@@ -280,7 +280,12 @@ if __name__=="__main__":
     for i in data:
         print(i+":"+data[i]['date'])
         if(data[i]['date']==cal):
-            sendMessage(args[0],args[1],args[2],args[3],args[4],i)
+            sendMessage(args[0],args[1],args[2],args[3],args[4],i+"的生日")
     # print(data)
-
     print(cal)
+    for i in range(1,4):
+        show_month(datetime.now().year, datetime.now().month, datetime.now().day+i)
+        for person in data:
+            if(data[person]['date']==cal):
+                sendMessage(args[0],args[1],args[2],args[3],args[4],"距离"+person+"生日还剩"+str(i)+"天")
+                print(cal)
