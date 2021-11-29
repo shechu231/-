@@ -297,7 +297,7 @@ if __name__=="__main__":
     # print(data)
     print(cal)
     for i in range(1,4):
-	if(not runOrLeap(datetime.now().year, datetime.now().month, datetime.now().day+i)):
+        if(not runOrLeap(datetime.now().year, datetime.now().month, datetime.now().day+i)):
             break
         show_month(datetime.now().year, datetime.now().month, datetime.now().day+i)
         for person in data:
