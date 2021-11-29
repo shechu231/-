@@ -266,7 +266,20 @@ def this_month():
     #print(calendar.month(datetime.now().year, datetime.now().month))
     #print('--------------------------')
     show_month(datetime.now().year, datetime.now().month, datetime.now().day)
- 
+
+def runOrLeap(year,month,day):
+    l_month = [31,28,31,30,31,30,31,31,30,31,30,31]
+    r_month = [31,29,31,30,31,30,31,31,30,31,30,31]
+    if(year%100==0 and year%400==0):
+        if(r_month[month-1]>=day):
+            return True
+    elif(year%100!=0 and year%4==0):
+        if(r_month[month-1]>=day):
+            return True
+    
+    if(l_month[month-1]>=day):
+        return True
+    return False
 
 #show_month(2034, 1, 1)
 if __name__=="__main__":
@@ -284,6 +297,8 @@ if __name__=="__main__":
     # print(data)
     print(cal)
     for i in range(1,4):
+	if(not runOrLeap(datetime.now().year, datetime.now().month, datetime.now().day+i)):
+            break
         show_month(datetime.now().year, datetime.now().month, datetime.now().day+i)
         for person in data:
             if(data[person]['date']==cal):
