@@ -514,7 +514,7 @@ if __name__ == '__main__':
     print(i+":"+data[i]['date'])
     if(data[i]['date']==str):
       data[i]['date']
-      sendMessage(args[0],args[1],args[2],args[3],args[4],i+"的生日")
+      sendMessage(args[0],args[1],args[2],args[3],args[4],str(i)+"的生日")
   for j in range(1,4):
     (year,month,day)=checkDay(datetime.datetime.now().year,datetime.datetime.now().month,datetime.datetime.now().day+j)
     ct = datetime.datetime(year,month,day)
@@ -523,5 +523,5 @@ if __name__ == '__main__':
     for i in data:
       if(data[i]['date']==str):
         data[i]['date']
-        sendMessage(args[0],args[1],args[2],args[3],args[4],"距离"+i+"的生日还有,"+j+"天")
+        sendMessage(args[0],args[1],args[2],args[3],args[4],"距离"+str(i)+"的生日还有,"+str(j)+"天")
   print(year,month,day)
