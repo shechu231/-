@@ -1,6 +1,4 @@
 # lunar.py
-
-# 2015/02/27 罗兵
 import yaml
 import datetime
 import time
