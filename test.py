@@ -501,7 +501,7 @@ def checkDay(year,month,day):
 if __name__ == '__main__':
 
   ct = datetime.datetime(datetime.datetime.now().year,datetime.datetime.now().month,datetime.datetime.now().day)
-  str = test(ct)
+  strs = test(ct)
   args=[]
   if (sys.argv[1]!=None):
         args=sys.argv[1].split("#")#参数以#做分割
@@ -509,19 +509,19 @@ if __name__ == '__main__':
   
   stream=open('./config.yml',mode='r',encoding="utf8")
   data=yaml.load(stream,Loader=yaml.FullLoader)
-  print(str)
+  print(strs)
   for i in data:
     print(i+":"+data[i]['date'])
-    if(data[i]['date']==str):
+    if(data[i]['date']==strs):
       data[i]['date']
       sendMessage(args[0],args[1],args[2],args[3],args[4],str(i)+"的生日")
   for j in range(1,4):
     (year,month,day)=checkDay(datetime.datetime.now().year,datetime.datetime.now().month,datetime.datetime.now().day+j)
     ct = datetime.datetime(year,month,day)
-    str = test(ct)
-    print(str)
+    strs = test(ct)
+    print(strs)
     for i in data:
-      if(data[i]['date']==str):
+      if(data[i]['date']==strs):
         data[i]['date']
-        sendMessage(args[0],args[1],args[2],args[3],args[4],"距离"+str(i)+"的生日还有,"+str(j)+"天")
+        sendMessage(args[0],args[1],args[2],args[3],args[4],"距离"+i+"的生日还有,"+str(j)+"天")
   print(year,month,day)
